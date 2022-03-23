@@ -1,0 +1,10 @@
+.form >>> .el-form-item__content {
+    text-align: left ;
+}
+.form >>> .el-textarea__inner {
+  
+    width: 50%;
+}
+.form >>> #element.style {
+    margin-left: 20%;
+}

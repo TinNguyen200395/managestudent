@@ -9,23 +9,26 @@
           </el-table-column>
           <el-table-column prop="gender" label="Gender" width="180">
           </el-table-column>
-          <el-table-column prop="birthday" label="BirthDay" width="180">
+          <el-table-column prop="" label="BirthDay" width="180" >
+            <template slot-scope="scope">
+              <span>{{scope.row.birthday | dateFormat('MMMM D, YYYY') }}</span>
+            </template>
           </el-table-column>
           <el-table-column prop="address" label="Address"> </el-table-column>
           <el-table-column fixed="right" label="Operations" width="120">
             <template slot-scope="scope">
-            <el-button
-              @click="clickEdit(scope.row)"
-              type="primary"
-              icon="el-icon-edit"
-              circle
-            ></el-button>
-            <el-button
-              @click="clickDelete(scope.row.id)"
-              type="danger"
-              icon="el-icon-delete"
-              circle
-            ></el-button>
+              <el-button
+             @click="clickEdit(scope.row.id)"
+                type="primary"
+                icon="el-icon-edit"
+                circle
+              ></el-button>
+              <el-button
+                @click="clickDelete(scope.row.id)"
+                type="danger"
+                icon="el-icon-delete"
+                circle
+              ></el-button>
             </template>
           </el-table-column>
         </el-table>

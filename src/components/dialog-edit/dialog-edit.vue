@@ -1,17 +1,13 @@
 <template>
-  <div class="form">
-    <h1>Student Management</h1>
-    <el-form
-      :model="ruleForm"
-      :rules="rules"
-      ref="ruleForm"
-      label-width="120px"
-      class=""
-    >
+  <div>
+    <el-dialog 
+    title="CreateDialog" 
+    :visible.sync="dialogFormVisible">
+      <el-form :model="form">
       <el-row type="flex" justify="center">
         <el-col :span="12">
           <el-form-item label="Full Name :" prop="name">
-            <el-input v-model="ruleForm.name"> </el-input>
+            <el-input v-model="form.name"> </el-input>
           </el-form-item>
         </el-col>
       </el-row>
@@ -19,7 +15,7 @@
       <el-row type="flex" justify="center">
         <el-col :span="12">
           <el-form-item label="Gender :" prop="gender">
-            <el-radio-group v-model="ruleForm.gender">
+            <el-radio-group v-model="form.gender">
               <el-radio label="Male"> </el-radio>
               <el-radio label="Female"> </el-radio>
             </el-radio-group>
@@ -33,7 +29,7 @@
             <el-date-picker
               type="date"
               placeholder="Please choose birthday"
-              v-model="ruleForm.birthday"
+              v-model="form.birthday"
               style="width: 100%"
             >
             </el-date-picker>
@@ -43,34 +39,21 @@
       <el-row type="flex" justify="center">
         <el-col :span="12">
           <el-form-item label="Address :" prop="address">
-            <el-input type="textarea" v-model="ruleForm.address"> </el-input>
+            <el-input type="textarea" v-model="form.address"> </el-input>
           </el-form-item>
         </el-col>
       </el-row>
-
-      <el-row type="flex" justify="center">
-        <el-form-item>
-          <el-button
-            type="primary"
-            @click="submitForm('ruleForm')"
-            >Create</el-button
-          >
-          <el-button @click="resetForm('ruleForm')">Reset</el-button>
-        </el-form-item>
-      </el-row>
-    </el-form>
-    <ListVue
-      :tableData="tableData"
-      @delete-account="handleDelete"
-      @edit-account="handleEdit"
-
-    />
-          <DialogEdit ref="dialog" 
-          :dialogVisible="dialogFormVisible" 
-          @submit-form="handleSubmitEdit"/>
-
+      </el-form>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="handleCloseDialog">Cancel</el-button>
+      <el-button type="primary" @click="onSubmit"
+        >Confirm</el-button
+      >
+    </span>
+    </el-dialog>
   </div>
 </template>
+<script src="./dialog-edit.ts">
 
-<script src="./crud-vue.ts"></script>
-<style src="./crud-vue.css" scoped></style>
+</script>
+<style scoped></style>

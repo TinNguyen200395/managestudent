@@ -5,18 +5,24 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.6",
     "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^9.1.2"
+    "vue-flag-icon": "^1.0.6",
+    "vue-i18n": "^8.27.0",
+    "vue-i18n-bridge": "^9.2.0-beta.10",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@intlify/vue-i18n-loader": "^3.2.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -27,6 +33,7 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "typescript": "~4.5.5",
+    "vue-cli-plugin-i18n": "~2.3.1",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {

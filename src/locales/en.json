@@ -1,0 +1,25 @@
+{
+    "crud-vue":{
+      "manage-student": "Manage Student",
+      "full-name":"Full Name:",
+      "gender":"Gender:",
+      "male":"Male:",
+      "female":"FeMale:",
+      "address":"Address:",
+      "birthday":"BirthDat:",
+      "create":"Create",
+      "reset":"Reset",
+      "operation":"Operations"
+    },
+    "list-student":{
+      "table-student": "Table Student",
+      "full-name":"Full Name:",
+      "gender":"Gender:",
+      "male":"Male:",
+      "female":"FeMale:",
+      "address":"Address:",
+      "birthday":"Birthday:",
+      "create":"Create",
+      "reset":"Reset"
+    }
+  }

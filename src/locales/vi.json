@@ -1,0 +1,29 @@
+{
+  "common": {
+    "select_lang": "Ngôn ngữ"
+  },
+  "crud-vue":{
+    
+    "manage-student": "Quản Lý Sinh Viên:",
+    "full-name":"Họ Tên:",
+    "gender":"Giới Tính:",
+    "male":"Nam:",
+    "female":"Nữ:",
+
+    "address":"Địa Chỉ:",
+    "birthday":"Ngày Sinh:",
+    "create":"Tạo",
+    "reset":"Tải"
+  },
+  "list-student":{
+    "table-student": "Danh Sách Sinh Viên",
+    "full-name":"Họ Tên:",
+    "gender":"Giới Tính:",
+    "male":"Nam:",
+    "female":"Nữ:",
+    "address":"Địa Chỉ:",
+    "birthday":"Ngày Sinh:",
+    "create":"Tạo",
+    "reset":"Tải"
+  }
+}

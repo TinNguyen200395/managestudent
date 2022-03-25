@@ -1,6 +1,9 @@
 import { Component, Prop, Ref, Vue, Watch } from "vue-property-decorator";
 import ListVue from "../list-vue/list-vue.vue";
 import DialogEdit from "../dialog-edit/dialog-edit.vue";
+import i18n from "@/i18n";
+
+
 
 @Component({
   components: {
@@ -13,6 +16,12 @@ export default class CrudVue extends Vue {
   // references từ dialog đến crud
   @Ref("dialog") readonly refDialog!: DialogEdit;
 
+  languages= [
+    {  language: 'en', title: 'English' },
+    {  language: 'vi', title: 'VietNam' }
+
+ ]
+ 
   dialogFormVisible = false;
 
   ruleForm = {
@@ -48,6 +57,9 @@ export default class CrudVue extends Vue {
       { required: true, message: "Please input address form", trigger: "blur" },
     ],
   };
+  changeLocale(locale:string) {
+    i18n.locale = locale;
+}
   // submitForm() {
   //   const item = {
   //     id: Math.floor(Math.random() * 1000),
@@ -97,4 +109,5 @@ export default class CrudVue extends Vue {
     this.dialogFormVisible = visible;
   }
   handleSubmitEdit(item: any) {}
+  
 }

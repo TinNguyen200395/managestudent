@@ -9,6 +9,7 @@ import i18n from "@/i18n";
   components: {
     ListVue,
     DialogEdit,
+  
   },
 })
 export default class CrudVue extends Vue {

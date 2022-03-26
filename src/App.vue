@@ -1,6 +1,14 @@
 <template>
   <div id="app">
-   <CrudVue/>
+     <router-link :to="{ name: 'Home' }">(Home)</router-link> |
+
+
+
+
+    <router-link :to="{ name: 'TestRouter1' }">(TestRouter1)</router-link> |
+
+    <router-view></router-view>
+     
   </div>
 </template>
 

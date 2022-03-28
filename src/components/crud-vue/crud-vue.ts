@@ -1,10 +1,6 @@
 import { Component, Prop, Ref, Vue, Watch } from "vue-property-decorator";
 import ListVue from "../list-vue/list-vue.vue";
 import DialogEdit from "../dialog-edit/dialog-edit.vue";
-import i18n from "@/i18n";
-
-
-
 @Component({
   components: {
     ListVue,
@@ -16,15 +12,9 @@ export default class CrudVue extends Vue {
   
   // references từ dialog đến crud
   @Ref("dialog") readonly refDialog!: DialogEdit;
-
-  languages= [
-    {  language: 'en', title: 'English' },
-    {  language: 'vi', title: 'VietNam' }
-
- ]
- 
   dialogFormVisible = false;
 
+  // tạo huộc tính cho form
   ruleForm = {
     id: Math.floor(Math.random() * 1000),
     name: "",
@@ -32,7 +22,9 @@ export default class CrudVue extends Vue {
     birthday: "",
     address: "",
   };
+  // tạo mảng trống để truyền đến list khi thực hiện việc submit
   tableData: any[] = [];
+  // tạo valdidate cho các trường trong form
   rules = {
     name: [
       { required: true, message: "Please input full name", trigger: "blur" },
@@ -58,21 +50,7 @@ export default class CrudVue extends Vue {
       { required: true, message: "Please input address form", trigger: "blur" },
     ],
   };
-  changeLocale(locale:string) {
-    i18n.locale = locale;
-}
-  // submitForm() {
-  //   const item = {
-  //     id: Math.floor(Math.random() * 1000),
-  //     name: this.ruleForm.name,
-  //     gender: this.ruleForm.gender,
-  //     birthday: this.ruleForm.birthday,
-  //     address: this.ruleForm.address,
-  //   };
-
-  //   this.tableData.push(item);
-  //   (this.$refs["ruleForm"] as any).resetFields();
-  // }
+ // tạo nút submit cho form 
   submitForm(ruleForm: any) {
     (this.$refs[ruleForm] as any).validate((valid: any) => {
       if (valid) {
@@ -92,15 +70,16 @@ export default class CrudVue extends Vue {
       }
     });
   }
+  // tạo nút rest from cho ứng dụng
   resetForm(ruleForm: any) {
     (this.$refs[ruleForm] as any).resetFields();
   }
-
+ // lết nối với handle delete từ table list để thực hiện delete một phần tử trong list 
   handleDelete(id: number) {
     const index = this.tableData.findIndex((x) => x.id === id);
     this.tableData.splice(index, 1);
   }
-
+ // lết nối với handle edit từ table list để thực hiện edit một phần tử trong list 
   handleEdit(id: number) {
     const item = this.tableData.find(x => x.id === id);
    

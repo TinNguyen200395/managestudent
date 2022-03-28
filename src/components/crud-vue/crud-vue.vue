@@ -1,15 +1,7 @@
 <template>
   <div class="form">
     
-    <el-button
-      type="primary"
-      v-for="entry in languages"
-      :key="entry.title"
-      @click="changeLocale(entry.language)"
-    >
-      {{ entry.title }}
-    </el-button>
-    <h1>{{ $t("crud-vue.manage-student") }}</h1>
+      <h1>{{ $t("crud-vue.manage-student") }}</h1>
     <el-form
       :model="ruleForm"
       :rules="rules"
@@ -68,6 +60,9 @@
         </el-form-item>
       </el-row>
     </el-form>
+    <!--:tableData="tableData"  truyền dữ liệu đến list-->
+        <!--      @delete-account="handleDelete" kết nối nút delete account từ list đến với -->
+
     <ListVue
       :tableData="tableData"
       @delete-account="handleDelete"
